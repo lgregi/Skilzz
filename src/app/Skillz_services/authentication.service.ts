@@ -53,9 +53,9 @@ export class authentication {
   }
 
   public async deleteUserFromDatabase(email: string): Promise<any> {
-    const deletar = firebase.database().ref(`Skillz_Users/${btoa(email)}`);
+    const del = firebase.database().ref(`Skillz_Users/${btoa(email)}`);
     try {
-      await deletar.remove();
+      await del.remove();
       console.log('Dados deletados com sucesso');
     } catch (err) {
       console.log(err);
